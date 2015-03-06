@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="Screenshot" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
+                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fqU-aq-4eK">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="delegate" destination="vXZ-lx-hvc" id="EsV-pH-txG"/>
+                                </connections>
+                            </webView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o7i-Tw-zdK">
+                                <rect key="frame" x="285" y="525" width="31" height="15"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="42R-t1-fTm">
+                                <rect key="frame" x="16" y="560" width="160" height="40"/>
+                                <color key="backgroundColor" red="0.0" green="0.73725490199999999" blue="0.67450980390000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="D7H-Lh-szo"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="160" id="Pgk-hU-CcE"/>
+                                    <constraint firstAttribute="width" constant="46" id="vfK-Ys-16G"/>
+                                </constraints>
+                                <state key="normal" title="表示部分をキャプチャ">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="vfK-Ys-16G"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="BtnCapTap:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="cQL-s4-kXm"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Xv-sU-4Tu">
+                                <rect key="frame" x="424" y="560" width="160" height="40"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="mTJ-al-gWf"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="160" id="yca-e9-aKI"/>
+                                </constraints>
+                                <state key="normal" title="全画面をキャプチャ">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="btnFullCapTap:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="4UJ-D8-THw"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="o7i-Tw-zdK" secondAttribute="centerX" id="0AG-FD-6GG"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="1Xv-sU-4Tu" secondAttribute="trailing" id="5Op-dA-0VG"/>
+                            <constraint firstAttribute="centerX" secondItem="fqU-aq-4eK" secondAttribute="centerX" id="Dgj-CL-uHA"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="42R-t1-fTm" secondAttribute="bottom" id="FOJ-qX-rPD"/>
+                            <constraint firstAttribute="height" secondItem="fqU-aq-4eK" secondAttribute="height" id="IrZ-kl-ByU"/>
+                            <constraint firstItem="42R-t1-fTm" firstAttribute="top" secondItem="o7i-Tw-zdK" secondAttribute="bottom" constant="20" id="RnJ-7Y-C1y"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="1Xv-sU-4Tu" secondAttribute="bottom" id="Xq1-dy-XcC"/>
+                            <constraint firstItem="42R-t1-fTm" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="jnU-CZ-Ebu"/>
+                            <constraint firstAttribute="centerY" secondItem="fqU-aq-4eK" secondAttribute="centerY" id="l0H-1q-29i"/>
+                            <constraint firstAttribute="width" secondItem="fqU-aq-4eK" secondAttribute="width" id="ozt-Gi-52U"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="timeLabel" destination="o7i-Tw-zdK" id="XSE-G9-Om4"/>
+                        <outlet property="webView" destination="fqU-aq-4eK" id="uhB-p1-xqq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>
